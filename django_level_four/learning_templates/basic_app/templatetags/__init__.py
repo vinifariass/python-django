@@ -1,0 +1,1 @@
+# Tells python that treating this directory as a package. This is required for custom template tags to work.
