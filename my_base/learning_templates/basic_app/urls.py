@@ -1,5 +1,5 @@
 from django.urls import re_path
-from basic_app import views
+from my_base.learning_templates.basic_app import views
 
 app_name = 'basic_app'
 
