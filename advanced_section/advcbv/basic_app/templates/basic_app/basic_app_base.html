@@ -4,14 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 </head>
 <body>
-      <nav class="navbar navbar-default navbar-static-top">
-        <ul class="nav navbar-nav">
-            <li><a href="navbar_brand" href={% url 'basic_app:list' %}">Schools</a></li>
-            <li><a href={% url 'admin:index' %}>Admin</a></li>
-            <li><a href={% url 'basic_app:student_list' %}>Students</a></li>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- O botão para telas pequenas (mobile) costuma vir aqui -->
+    
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+            <!-- Note as classes nav-item e nav-link adicionadas -->
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'basic_app:list' %}">Schools</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'basic_app:student_list' %}">Students</a>
+            </li>
         </ul>
-    </nav>
+    </div>
+</nav>
+{% block content %}{% endblock %}
 </body>
 </html>

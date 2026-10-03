@@ -1,6 +1,7 @@
-from django.shortcuts import render
-from django.views.generic import TemplateView, View, ListView, DetailView
+from django.views.generic import (TemplateView, ListView, DetailView,CreateView, UpdateView, DeleteView)
 from . import models
+
+
 class IndexView(TemplateView):
     template_name = 'index.html'
     
@@ -12,11 +13,19 @@ class IndexView(TemplateView):
 class SchoolListView(ListView):
     context_object_name = 'schools'
     model = models.School
-    template_name = 'school_list.html'
-    context_object_name = 'schools'
+    template_name = 'basic_app/school_list.html'
+
+class StudentListView(ListView):
+    context_object_name = 'students'
+    model = models.Student
+    template_name = 'basic_app/student_list.html'
     
 class SchoolDetailView(DetailView):
     context_object_name = 'school_detail'
     model = models.School
-    template_name = 'school_detail.html'
-    context_object_name = 'school'
+    template_name = 'basic_app/school_detail.html'
+    
+class SchoolCreateView(CreateView):
+    fields = ('name', 'location', 'principal')
+    model = models.School
+    template_name = 'basic_app/school_form.html'
